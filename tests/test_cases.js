@@ -74,17 +74,31 @@ assert( !mc.set({ answer : "1" }) );
 // ----------------------------------------------------------------------------- 
 console.log("TEST -- SurveyAppController() - model manipulation");
 
-  surveyJSON = [
+//  surveyJSON = [
+//
+//    { "type" : "ESSAY",
+//      "question" : "Write about something" },
+//
+//    { "type" : "MULTIPLE_CHOICE",
+//      "question" : "Favorite RGB",
+//      "answers" : ["red", "green", "blue"] },
+//
+//    { "type" : "TRUE_FALSE",
+
+   surveyJSON = [
 
     { "type" : "ESSAY",
-      "question" : "Write about something" },
+      "question" : "What spider makes the largest web?" },
 
     { "type" : "MULTIPLE_CHOICE",
-      "question" : "Favorite RGB",
-      "answers" : ["red", "green", "blue"] },
-
+      "question" : "Which species of spider sees in color?",
+      "answers" : ["Hobo spider",
+                   "Black Widow Spider",
+                   "Jumping spider",
+                   "Daddy long legs"] },
+      
     { "type" : "TRUE_FALSE",
-      "question" : "Is this a question?" } ];
+      "question" : "Some spiders have wings" } ];
                    
   app.addItems(surveyJSON);
   assert( app.getItemIndex() == -1 );
