@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Backbone example</title>
+
+  <!-- external libraries -->
+  <script type="text/javascript" src="jslibs/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="jslibs/underscore-min.js"></script>
+  <script type="text/javascript" src="jslibs/backbone-min.js"></script>
+  <script type="text/javascript" src="jslibs/mustache.js"></script>
+
+  <!-- app scripts -->
+  <script type="text/javascript" src="jsapp/SurveyModel.js"></script>
+  <script type="text/javascript" src="jsapp/SurveyController.js"></script>
+  <script type="text/javascript" src="jsapp/SurveyView.js"></script>
+
+
+<script type="text/javascript">
+
+$(function() {
+  var surveyApp = new SurveyAppController({ append_at : $('body') });
+  window.app = surveyApp;
+  Backbone.history.start();
+
+  
+
+  runTestCases();
+});
+
+
+
+
+
+
+
+
+
+</script>
+
+<!-- TEST -->
+<script type="text/javascript" src="tests/test_cases.js"></script>

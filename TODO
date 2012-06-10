@@ -1,0 +1,28 @@
++ use get() and set(), do not modify attributes without set() !
+
+
+
+
+// ----------------------------------------------------------------------------- 
+// bind() and bindAll
+//
+// in JavaScript, when you pass a function as a callback, its value for "this" 
+// is lost. Using these functions allows to determine the value of "this"
+// ----------------------------------------------------------------------------- 
+
+// Binds a number of methods on the object, specified by methodNames, to be run 
+// in the context of that object whenever they are invoked.
+_.bindAll(object, [*methodNames])
+
+// Bind a function to an object, meaning that whenever the function is called, 
+// the value of this will be the object.
+_.bind(function, object, [*arguments])
+
+
+
+
+
+Use mustache.js
+
+Use ICanHaz.js
+    look oat "ich" is ICanHaz.js magic
