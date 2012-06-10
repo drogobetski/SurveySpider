@@ -13,9 +13,11 @@ var SurveyView = Backbone.View.extend({
 
     var template =
        '<div id="item_{{ cid }}">'
-      +'  <span class="progress">{{ progress }}</span>'
-      +'  <span class="question">{{ question }}</span>'
-      +'  <div class="answer {{ type }}">';
+      +'  <div class="title">'
+      +'    <span class="progress">({{ progress }})</span>'
+      +'    <span class="question">{{ question }}</span>'
+      +'  </div>'
+      +'    <div class="answer {{ type }}">';
 
 
     // ANSWER -- ESSAY, MULTIPLE_CHOICE or TRUE_FALSE --------------------------
@@ -34,31 +36,46 @@ var SurveyView = Backbone.View.extend({
 
       _.each(this.model.get("answers"), function(ans, key) {
 
-        template += '<input type=radio'
-                 +  '       name="multiple_choice"'
-                 +  '       value="' + ans + '"';
+        template += '<div class="radio-item">'
+                 +  '  <input type=radio'
+                 +  '         name="multiple_choice"'
+                 +  '         value="' + ans + '"';
 
+        // TODO: checked not working !!!
         if (key === checkedIndex)
           template += ' checked';
 
-        template += '/>' + ans;
+        template += '/><span class="label">' + ans
+                 +  '</span>' + '</div>';
       });
     }
     else if (this.model.get("type") === "TRUE_FALSE") {
 
       // determine if a radio button is checked
       var checkedIndex = this.model.get("answer");
+      var trueCheck = "";
+      var falseCheck = "";
       console.log("TRUE_FALSE " + checkedIndex);
 
-      if (typeof checkedIndex === 'undefined')
-        template += '<input type=radio name="true_false"/>True'
-                 +  '<input type=radio name="true_false"/>False';
-      else if (checkedIndex === true)
-        template += '<input type=radio name="true_false" checked/>True'
-                 +  '<input type=radio name="true_false"/>False';
-      else if (checkedIndex === false)
-        template += '<input type=radio name="true_false"/>True'
-                 +  '<input type=radio name="true_false" checked/>False';
+      if (typeof checkedIndex !== 'undefined') {
+        if (checkedIndex === true)
+          trueCheck = "checked";
+        else if (checkedIndex === false)
+          falseCheck = "checked";
+      }
+
+      // True radio button
+      template += '<div class="radio-item">'
+               +  '  <input type=radio name="true_false" value="True"'
+               +            trueCheck + '/>'
+               +  '  <span class="label">True</span>'
+               +  '</div>';
+      // False radio button
+      template += '<div class="radio-item">'
+               +  '  <input type=radio name="true_false" value="False"'
+               +            falseCheck + '/>'
+               +  '  <span class="label">False</span>'
+               +  '</div>';
     }
     template += '</div></div>';
 
@@ -69,17 +86,17 @@ var SurveyView = Backbone.View.extend({
 
     // first item
     if (itemNum === 1) {
-      template += '<a class="next" href="#survey/next">next</a>';
+      template += '<a class="button next" href="#survey/next">next</a>';
     }
     // last item
     else if (itemNum === numItems) {
-      template += '<a class="prev" href="#survey/prev">prev</a>'
-               +  '<a class="submit" href="#survey/submit">submit</a>';
+      template += '<a class="button submit" href="#survey/submit">submit</a>'
+               +  '<a class="button prev" href="#survey/prev">prev</a>';
     }
     // middle item
     else {
-      template += '<a class="prev" href="#survey/prev">prev</a>'
-               +  '<a class="next" href="#survey/next">next</a>';
+      template += '<a class="button next" href="#survey/next">next</a>'
+               +  '<a class="button prev" href="#survey/prev">prev</a>';
     }
     template += '</div>';
 
@@ -91,6 +108,9 @@ var SurveyView = Backbone.View.extend({
                              progress : progress });
 
     $(this.el).html(Mustache.to_html(template, context));
+
+    // apply jQueryUI
+    $(this.el).find('a').button();
     return this;
   }
 });
@@ -131,6 +151,8 @@ var SurveyAppView = Backbone.View.extend({
     var context = this.model.toJSON();
     $(this.el).attr("id", "survey");
     $(this.el).html(Mustache.to_html(template, context));
+    //$(this.el).attr("class", "ui-widget ui-widget-shadow");
+    $(this.el).attr("class", "ui-widget ui-widget-content ui-corner-all");
 
     this.currentSurveyItem = this.$('.item');
     return this;

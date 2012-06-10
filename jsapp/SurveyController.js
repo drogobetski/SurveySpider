@@ -40,10 +40,10 @@ var SurveyAppController = Backbone.Router.extend({
       ans = $('textarea[name=essay]').val();
 
     else if ( $('input:radio[name=multiple_choice]').length > 0 )
-      ans = $('input:radio[name=multiple_choice]:checked').index();
+      ans = $('input:radio[name=multiple_choice]:checked').parent().index();
 
     else if ( $('input:radio[name=true_false]').length > 0 ) {
-      ans = $('input:radio[name=true_false]:checked').index();
+      ans = $('input:radio[name=true_false]:checked').parent().index();
       if (ans === 0)
         ans = true;
       else if (ans === 1)
@@ -53,6 +53,7 @@ var SurveyAppController = Backbone.Router.extend({
     // check and set
     if (typeof ans != 'undefined' && ans !== "") {
       this.setAnswer(ans);
+      console.log("setCurrentAnswer: " + ans);
     }
   },
 

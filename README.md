@@ -20,4 +20,4 @@ surveyJSON = [
     "question" : "Some spiders have wings" } ];
 
 
-The completed survey can be accessed in JSON format by accessing: app.model.survey.toJSON()
+The completed survey can be accessed in JSON format with: app.model.survey.toJSON()

@@ -3,13 +3,24 @@
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Backbone example</title>
+  <title>SpiderSurvey</title>
 
   <!-- external libraries -->
   <script type="text/javascript" src="jslibs/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="jslibs/underscore-min.js"></script>
   <script type="text/javascript" src="jslibs/backbone-min.js"></script>
   <script type="text/javascript" src="jslibs/mustache.js"></script>
+
+  <script type="text/javascript" 
+          src="jslibs/jqueryui/js/jquery-ui-1.8.21.custom.min.js"></script>
+
+  <!-- TODO move ccs out of jslibs -->
+  <link type="text/css"
+        href="jslibs/jqueryui/css/smoothness/jquery-ui-1.8.21.custom.css"
+        rel="stylesheet" />
+
+  <link type="text/css" href="main.css" rel="stylesheet"/>
+
 
   <!-- app scripts -->
   <script type="text/javascript" src="jsapp/SurveyModel.js"></script>
@@ -27,6 +38,8 @@ $(function() {
   
 
   runTestCases();
+ 
+ 
 });
 
 
