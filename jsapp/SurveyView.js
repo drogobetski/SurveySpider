@@ -143,8 +143,6 @@ var SurveyAppView = Backbone.View.extend({
 
 
   render : function() {
-    console.log("SurveyAppView.render()");
-
     var template = '<div class="item"></div>';
 
     var context = this.model.toJSON();
