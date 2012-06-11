@@ -88,10 +88,10 @@ console.log("TEST -- SurveyAppController() - model manipulation");
    surveyJSON = [
 
     { "type" : "ESSAY",
-      "question" : "What spiders make the largest webs?" },
+      "question" : "Which spiders make the largest webs?" },
 
     { "type" : "MULTIPLE_CHOICE",
-      "question" : "Which species of spider sees in color?",
+      "question" : "Which species of spiders see in color?",
       "answers" : ["Hobo spider",
                    "Black Widow Spider",
                    "Jumping spider",

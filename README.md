@@ -4,6 +4,7 @@ SurveySpider -- Javascript MVC Survey
 [Run SurveySpider -- online](http://sntx.github.com/SurveySpider/)
 
 
+
 SurveySpider generates a survey from a JSON array of the form:
 
 ```html
@@ -11,10 +12,10 @@ SurveySpider generates a survey from a JSON array of the form:
 surveyJSON = [
 
   { "type" : "ESSAY",
-    "question" : "What spider makes the largest web?" },
+    "question" : "Which spider makes the largest web?" },
 
   { "type" : "MULTIPLE_CHOICE",
-    "question" : "Which species of spider sees in color?",
+    "question" : "Which species of spiders see in color?",
     "answers" : ["Hobo spider",
                  "Black Widow Spider",
                  "Jumping spider",
