@@ -1,11 +1,27 @@
-SurveySpider -- Javascript MVC Survey
+SurveySpider -- jQueryUI Survey System
+======================================
+
+[Run SurveySpider](http://sntx.github.com/SurveySpider/)
+
+
+Features
+
+  - Easy to set up: reads JSON array and automatically generates a survey page
+  - jQueryUI themes: just change the jQueryUI theme to modify the look of the page
+  - AJAX ready: just get the completed survey in JSON format and use it in your server-side application
+
+
+Instructions
 ============
 
-[Run SurveySpider -- online](http://sntx.github.com/SurveySpider/)
+(1) Initialize App and append main div to an element in your page
+
+  var surveyApp = new SurveyAppController({ append_at : $('#survey-wrapper') });
+  window.app = surveyApp;
+  Backbone.history.start();
 
 
-
-SurveySpider generates a survey from a JSON array of the form:
+(2) Get survey in JSON format:
 
 ```html
 <script>
@@ -26,5 +42,8 @@ surveyJSON = [
 </script>
 ```
 
+(3) add survey items by usign app.addItems(surveyJSON) or app.addItem()
 
-The completed survey can be accessed in JSON format with: app.model.survey.toJSON()
+(4) call app.next() for survey to begin
+
+(5) Get the completed survey by running: app.model.survey.toJSON()
