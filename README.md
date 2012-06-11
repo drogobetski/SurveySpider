@@ -3,6 +3,8 @@ SurveySpider -- Javascript MVC Survey
 
 SurveySpider generates a survey from a JSON array of the form:
 
+[Run it live!](http://sntx.github.com/SurveySpider/)
+
 
 surveyJSON = [
 
