@@ -1,0 +1,68 @@
+#survey {
+  padding: 0.5em;
+}
+
+#survey .item {
+}
+
+/* TITLE
+ * =============================================================================
+ */
+#survey .item .title {
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+#survey .item .title .progress {
+  float: right;
+}
+
+#survey .item .title .question {
+  font-size: 120%;
+}
+
+/* ANSWER
+ * =============================================================================
+ */
+#survey .item .answer {
+  min-height: 10em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+#survey .item .answer textarea {
+  border-width: 0.125em;
+  padding: 0.5em;
+  margin: 0;
+
+  width: 97.5%;
+  min-height: 10em;
+  max-width: 97.5%;
+}
+
+#survey .answer .radio-item {
+  margin-bottom: 0.5em;
+}
+
+/* radio button */
+#survey .answer .radio-item input {
+  margin: 0;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+#survey .answer .radio-item .label {
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+/* BUTTONS
+ * =============================================================================
+ */
+#survey .item .buttons {
+}
+
+#survey .item .buttons .button {
+  float: right;
+  margin-left: 0.5em;
+}
