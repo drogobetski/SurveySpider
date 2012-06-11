@@ -16,9 +16,13 @@ Instructions
 
 (1) Initialize App and append main div to an element in your page
 
+```html
+<script>
   var surveyApp = new SurveyAppController({ append_at : $('#survey-wrapper') });
   window.app = surveyApp;
   Backbone.history.start();
+</script>
+```
 
 
 (2) Get survey in JSON format:
@@ -39,10 +43,18 @@ surveyJSON = [
     
   { "type" : "TRUE_FALSE",
     "question" : "Some spiders have wings" } ];
+
 </script>
 ```
 
-(3) add survey items by usign app.addItems(surveyJSON) or app.addItem()
+(3) Add survey items by usign app.addItems(surveyJSON) or:
+
+```html
+<script>
+  app.addItem( { "type" : "TRUE_FALSE",
+                 "question" : "Some spiders have wings" } );
+</script>
+```
 
 (4) call app.next() for survey to begin
 
