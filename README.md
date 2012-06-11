@@ -7,8 +7,8 @@ SurveySpider -- jQueryUI Survey System
 Features
 
   - Easy to set up: reads JSON array and automatically generates a survey page
-  - jQueryUI themes: just change the jQueryUI theme to modify the look of the page
-  - AJAX ready: just get the completed survey in JSON format and use it in your server-side application
+  - jQueryUI themes: change the jQueryUI theme to modify the look of the survey
+  - AJAX ready: get the completed survey in JSON format and send it to a server-side application
 
 
 Instructions
