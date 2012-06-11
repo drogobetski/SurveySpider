@@ -55,7 +55,6 @@ var SurveyView = Backbone.View.extend({
       var checkedIndex = this.model.get("answer");
       var trueCheck = "";
       var falseCheck = "";
-      console.log("TRUE_FALSE " + checkedIndex);
 
       if (typeof checkedIndex !== 'undefined') {
         if (checkedIndex === true)

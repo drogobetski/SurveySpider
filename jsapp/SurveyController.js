@@ -51,7 +51,7 @@ var SurveyAppController = Backbone.Router.extend({
     }
 
     // check and set
-    if (typeof ans != 'undefined' && ans !== "") {
+    if (typeof ans != 'undefined' && ans !== "" && ans !== -1) {
       this.setAnswer(ans);
       console.log("setCurrentAnswer: " + ans);
     }

@@ -105,7 +105,6 @@ console.log("TEST -- SurveyAppController() - model manipulation");
 
   app.next();
   assert( app.getItemIndex() == 0 );
-  /*
   app.next();
   assert( app.getItemIndex() == 1 );
   app.next();
@@ -127,6 +126,5 @@ console.log("TEST -- SurveyAppController() - model manipulation");
   app.setAnswer(0);
   assert( app.getItemIndex() == 1 );
   assert (app.model.getAnswer() === 0);
-  */
 
 }
