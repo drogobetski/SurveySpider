@@ -1,11 +1,13 @@
 SurveySpider -- Javascript MVC Survey
 ============
 
+[Run SurveySpider -- online](http://sntx.github.com/SurveySpider/)
+
+
 SurveySpider generates a survey from a JSON array of the form:
 
-[Run it live!](http://sntx.github.com/SurveySpider/)
-
-
+```html
+<script>
 surveyJSON = [
 
   { "type" : "ESSAY",
@@ -20,6 +22,8 @@ surveyJSON = [
     
   { "type" : "TRUE_FALSE",
     "question" : "Some spiders have wings" } ];
+</script>
+```html
 
 
 The completed survey can be accessed in JSON format with: app.model.survey.toJSON()
