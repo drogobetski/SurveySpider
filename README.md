@@ -23,7 +23,7 @@ surveyJSON = [
   { "type" : "TRUE_FALSE",
     "question" : "Some spiders have wings" } ];
 </script>
-```html
+```
 
 
 The completed survey can be accessed in JSON format with: app.model.survey.toJSON()
