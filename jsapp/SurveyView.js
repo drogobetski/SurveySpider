@@ -1,3 +1,21 @@
+/*
+    SurveySpider -- Easy to set up survey generator web app
+    Copyright (C) 2012 Santiago Ferreira
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 var SurveyView = Backbone.View.extend({
   initialize : function(args) {
     // TODO: bindings
@@ -13,11 +31,11 @@ var SurveyView = Backbone.View.extend({
 
     var template =
        '<div id="item_{{ cid }}">'
-      +'  <div class="title">'
+      +'  <div class="title ui-widget-header ui-corner-all">'
       +'    <span class="progress">({{ progress }})</span>'
       +'    <span class="question">{{ question }}</span>'
       +'  </div>'
-      +'    <div class="answer {{ type }}">';
+      +'    <div class="answer {{ type }} ui-widget-content ui-corner-all">';
 
 
     // ANSWER -- ESSAY, MULTIPLE_CHOICE or TRUE_FALSE --------------------------
@@ -81,7 +99,7 @@ var SurveyView = Backbone.View.extend({
 
     // BUTTONS ----------------------------------------------------------------- 
     //
-    template += '<div class="buttons">';
+    template += '<div class="buttons ui-helper-clearfix ">';
 
     // first item
     if (itemNum === 1) {
@@ -146,9 +164,8 @@ var SurveyAppView = Backbone.View.extend({
     var template = '<div class="item"></div>';
 
     var context = this.model.toJSON();
-    $(this.el).attr("id", "survey");
     $(this.el).html(Mustache.to_html(template, context));
-    //$(this.el).attr("class", "ui-widget ui-widget-shadow");
+    $(this.el).attr("id", "survey");
     $(this.el).attr("class", "ui-widget ui-widget-content ui-corner-all");
 
     this.currentSurveyItem = this.$('.item');

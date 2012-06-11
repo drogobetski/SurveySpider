@@ -1,96 +1,21 @@
-/* NOTES ON MEASURES
- *
- * -- HEIGHT -- 300px
- *
- *                            Elements    Total
- * 
- * padding top #survey        10px
- * title height               30px        40px
- * title padding bottom       20px        60px
- * answer div height          170px       230px
- * answer div padding bottom  20px        250px
- * buttons div height         40px        290px
- * buttons div padding bottom 10px        300px
- *
- */
+body {
+  font-size:60%;
+  margin: 8px;
+}
 
-/* TODO
- *
- * True false radio buttons labels are farther appart from radio buttons 
- * compared to multiple choice items
- *
- */
-
-#survey {
+#survey-wrapper {
 
   position: relative;
-  width: 800px;
-  height: 300px;
+  width: 50em;
+  height: 25em;
   margin-left: auto;
   margin-right: auto;
-  top: 50px;
+  /*top: 50px;*/
 }
 
-#survey .item {
+#switcher {
 
-  padding: 10px;
-  height: 280px;
-}
-
-/* TITLE
- * =============================================================================
- */
-#survey .item .title {
-
-  font-weight: bold;
-  padding-bottom: 20px;
-  height: 30px;
-}
-
-#survey .item .title .progress {
-  color: #AAA;
-}
-
-#survey .item .title .question {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ANSWER
- * =============================================================================
- */
-#survey .item .answer {
-  height: 170px;
-  padding-bottom: 20px;
-}
-
-#survey .item .answer textarea {
-  resize: none;
-  padding: 0;
-  width: 778px;
-  height: 168px;
-}
-
-#survey .answer .radio-item {
-  padding-bottom: 5px;
-}
-
-#survey .answer .radio-item .label {
-}
-
-/* BUTTONS
- * =============================================================================
- */
-#survey .item .buttons {
-  /* 40px = .button height + .button border */
-  height: 40px;
-  padding-bottom: 10px;
-}
-
-#survey .item .buttons .button {
-  border-width: 1px;
-  height: 38px;
-  float: right;
-  margin: 0;
-  margin-left: 10px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }

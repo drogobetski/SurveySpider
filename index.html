@@ -20,18 +20,45 @@
   <script type="text/javascript" src="jsapp/SurveyView.js"></script>
 
   <!-- CSS -->
-  <!-- TODO move ccs out of jslibs/jqueryui -->
+
+  <!-- TODO move ccs out of jslibs/jqueryui
   <link type="text/css"
         href="jslibs/jqueryui/css/smoothness/jquery-ui-1.8.21.custom.css"
         rel="stylesheet" />
+  -->
+
+  <link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css" />
+
   <link type="text/css" href="css/main.css" rel="stylesheet"/>
+  <link type="text/css" href="css/SurveyView.css" rel="stylesheet"/>
+
+  <!-- jQueryUI Theme Switcher -->
+  
+  <script>
+  $(document).ready(function(){
+    $('#switcher').themeswitcher();
+  });
+  </script>
+  
+
+</head>
+<body>
+
+  <div id="survey-wrapper"></div>
+
+  <script type="text/javascript"
+    src="http://jqueryui.com/themeroller/themeswitchertool/">
+  </script>
+  <div id="switcher"></div>
+
+</body>
 
 
 <script type="text/javascript">
 
 // (1) Initialize Backbone app
 $(function() {
-  var surveyApp = new SurveyAppController({ append_at : $('body') });
+  var surveyApp = new SurveyAppController({ append_at : $('#survey-wrapper') });
   window.app = surveyApp;
   Backbone.history.start();
 
